@@ -1,0 +1,7 @@
+{
+  "name": "Bataille",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
