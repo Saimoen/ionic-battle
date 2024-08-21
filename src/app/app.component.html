@@ -1,3 +1,47 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Jeu de Bataille
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" (click)="jouerTour()" [disabled]="jeuTermine">Jouer un tour</ion-button>
+  <ion-button expand="full" color="secondary" (click)="recommencerJeu()">Recommencer le jeu</ion-button>
+  <div>{{ resultatTour }}</div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Joueur 1</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let carte of mainJoueur1">
+                {{ carte.toStringValeur(carte.valeur) }} de {{ carte.toStringCouleur(carte.couleur) }}
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Joueur 2</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let carte of mainJoueur2">
+                {{ carte.toStringValeur(carte.valeur) }} de {{ carte.toStringCouleur(carte.couleur) }}
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
